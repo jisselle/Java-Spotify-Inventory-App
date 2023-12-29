@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Record</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+
+<style>
+        body {
+            background-color: #121212; /* Dark background color */
+            color: #fff; /* White text */
+        }
+
+        .container {
+            background-color: #1e1e1e; /* Medium gray background color */
+            color: #fff; /* White text inside container */
+
+        }
+
+        h5.alert-success {
+            background-color: #1db954; /* Success alert green color */
+            color: #fff; /* White text */
+        }
+
+        h1 {
+            color: #1db954; /* Heading color green */
+        }
+
+        .btn-primary {
+            background-color: #1db954; /* green */
+            border-color: #1db954; /* green color */
+            color: #fff; /* white text on button */
+        }
+    </style>
+    
+    
+
+<body class="bg-light d-flex align-items-center justify-content-center min-vh-100 w-50 mx-auto px-5 pt-2 pb-2">
+
+<div class="container rounded border border-info border-5">
+
+ <h5 class="mb-2 mt-3 text-center alert alert-success">Record successfully added!</h5>
+ 
+ <h1 class="mb-4 mt-4 text-center" th:text="${title}"></h1>
+ 
+ <div class="container rounded border px-1 py-3">  
+   
+<p th:text="'Artist: ' + ${artist}"></p>
+<p th:text="'Label: ' + ${label}"></p>
+<p th:text="'Year Released: ' + ${releaseYear}"></p>
+<p th:text="'Number of Tracks: ' + ${trackAmount}"></p>
+<p th:text="'Size: ' + ${recordSize}"></p>
+<p th:if="${isDamaged}" class="alert alert-warning px-2">This record is damaged! </p>
+			
+  	</div>
+  
+    
+  <br/>
+   
+   
+    <a class="btn btn-primary mt-3 mb-3 float-right" href="/records" role="button">View all records</a>
+   
+  
+   
+   	</div>
+</div>
+    
+    
+</body>
+</html>

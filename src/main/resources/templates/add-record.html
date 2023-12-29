@@ -1,0 +1,73 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Add Record</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+
+<style>
+    body {
+        background-color: #121212; /* Dark bg color */
+        color: #fff; /* White*/
+    }
+
+    .container {
+        background-color: #1e1e1e; /* Medium gray bg color */
+        color: #fff; /* White */
+    }
+
+    h1 {
+        color: #1db954; /* Green */
+    }
+</style>
+
+<body class="bg-light d-flex align-items-center justify-content-center min-vh-100 w-50 mx-auto px-5 pt-2 pb-2">
+
+<div class="container rounded border border-info border-5">
+    <h1 class="mb-4 mt-4 text-center">Add Record</h1>
+	
+	<form th:action="@{/records}" th:object="${recordRequest}" method="post" class="w-50 mx-auto">
+		<label for="title">Title </label>
+		<input type="text" id="title" th:field="*{title}" class="mb-2 form-control"></input>
+		<div class="text-danger mb-1" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+		
+		<label for="artist">Artist </label>
+		<input type="text" id="artist" th:field="*{artist}" class="mb-2 form-control"></input>
+		<div class="text-danger mb-1" th:if="${#fields.hasErrors('artist')}" th:errors="*{artist}"></div>
+		
+		<label for="label">Label</label>
+		<input type="text" id="label" th:field="*{label}" class="mb-2 form-control"></input>
+		<div class="text-danger mb-1" th:if="${#fields.hasErrors('label')}" th:errors="*{label}"></div>
+		
+		<label for="releaseYear">Release Year</label>
+		<input type="number" id="releaseYear" th:field="*{releaseYear}" class="mb-2 form-control"></input>
+		<div class="text-danger mb-1" th:if="${#fields.hasErrors('releaseYear')}" th:errors="*{releaseYear}"></div>
+		
+		<label for="trackAmount">Track Amount</label>
+		<input type="number" id="trackAmount" th:field="*{trackAmount}" class="mb-2 form-control"></input>
+		<div class="text-danger mb-1" th:if="${#fields.hasErrors('trackAmount')}" th:errors="*{trackAmount}"></div>
+		
+		<label for="recordSize" class="mt-2 ml-2 mb-3">Record Size:</label>
+		<select id="recordSize" th:field="*{recordSize}">
+    	<option value="7-inch">7-inch</option>
+    	<option value="10-inch">10-inch</option>
+    	<option value="12-inch">12-inch</option>
+		</select>
+		</br>
+		<div class="form-check form-check-inline">
+		<label for="damaged"><strong>Is this Record Damaged?</strong></label>
+		<input type="checkbox" id="damaged" th:checked="${damaged}" name="damaged" value="true" class="form-check-input ml-2 mb-1"></div>
+		</br>
+		
+
+		<button type="Submit" class="btn btn-success mt-3">Submit</button>
+		
+	</form>
+	<a class="btn btn-secondary mb-3 mr-2 float-right" href="/records" role="button">Return to all records</a>
+	</div>
+</body>
+</html>
+
