@@ -1,5 +1,5 @@
 # Music Record Inventory Management System
-
+![Application Screenshot](./img/Index.png) 
 This is a Java Spring Boot application that serves as a Music Record Inventory Management System. The application is built using the Spring MVC framework and utilizes Thymeleaf for server-side templating.
 
 ## Features
@@ -14,6 +14,12 @@ This is a Java Spring Boot application that serves as a Music Record Inventory M
 - Java Development Kit (JDK) 8 or higher
 - Maven (for building and managing dependencies)
 - Your favorite IDE (IntelliJ IDEA, Eclipse, etc.)
+
+- ## Screen Grabs
+![Application Screenshot](./img/Create.png) 
+![Application Screenshot](./img/Details.png) 
+![Application Screenshot](./img/Edit.png) 
+
 
 ## Getting Started
 
