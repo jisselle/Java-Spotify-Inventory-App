@@ -16,6 +16,7 @@ This is a Java Spring Boot application that serves as a Music Record Inventory M
 - Your favorite IDE (IntelliJ IDEA, Eclipse, etc.)
 
 - ## Screen Grabs
+- ![Application Screenshot](./img/Index.png) 
 ![Application Screenshot](./img/Create.png) 
 ![Application Screenshot](./img/Details.png) 
 ![Application Screenshot](./img/Edit.png) 
